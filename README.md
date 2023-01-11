@@ -3,6 +3,8 @@
 ## Clone the project
 
 git clone https://github.com/SamStha07/frontend-coding-challenge.git
+<br/>
+cd frontend-coding-challenge
 
 
 
@@ -41,3 +43,13 @@ You can browse [http://localhost:5173/](http://localhost:5173/) it in your brows
 2. User can view information related to each spell [http://localhost:5173/acid-arrow](http://localhost:5173/acid-arrow)
 3. User can add the spells to their favorite, currently using localStorage to store the favorite
 4. User can also view all the listed favorite spells [http://localhost:5173/favorites](http://localhost:5173/favorites)
+
+## Technologies used
+
+#### 1. Typescript
+#### 2. Redux-toolkit
+#### 3. React-router
+#### 4. Tailwind
+#### 5. Eslint
+#### 6. Prettier
+
