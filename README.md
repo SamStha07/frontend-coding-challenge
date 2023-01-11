@@ -34,7 +34,7 @@ Your app is ready to be deployed!
 
 ## Add .env file
 
-Need to add .env file as shown in sample environment variables in .env.production
+Need to add .env file as shown in sample environment variables in .env.test
 
 ## After successfully installing on your local machine
 
