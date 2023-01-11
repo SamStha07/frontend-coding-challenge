@@ -3,6 +3,8 @@
 ## Clone the project
 
 git clone https://github.com/SamStha07/frontend-coding-challenge.git
+<br/>
+cd frontend-coding-challenge
 
 
 
