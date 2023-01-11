@@ -1,5 +1,5 @@
 import Loader from 'components/loader.component';
-import SpellTotalAndListLayout from './spell-total-and-list.layout';
+import SpellTotalAndListLayout from 'layout/spell-total-and-list.layout';
 import useFetchSpellsList from './useFetchSpellsList';
 
 const HomeRoute = () => {

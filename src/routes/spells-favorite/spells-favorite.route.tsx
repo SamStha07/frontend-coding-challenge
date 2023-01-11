@@ -1,7 +1,7 @@
+import SpellTotalAndListLayout from 'layout/spell-total-and-list.layout';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { RootState } from 'redux/store';
-import SpellTotalAndListLayout from 'routes/home/spell-total-and-list.layout';
 
 const SpellsFavoriteRoute = () => {
   const favoritesList = useSelector((state: RootState) => state.favorites);

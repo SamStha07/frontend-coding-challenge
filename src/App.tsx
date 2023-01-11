@@ -6,11 +6,13 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import PageNotFound from 'routes/page-not-found/page-not-found.route';
-import SpellsFavoriteRoute from 'routes/spells-favorite/spells-favorite.route';
 
 // lazily imported routes
 const HomeRoute = React.lazy(() => import('routes/home/home.route'));
 const SpellsDetailsRoute = React.lazy(() => import('routes/spell-details/spells-details.route'));
+const SpellsFavoriteRoute = React.lazy(
+  () => import('routes/spells-favorite/spells-favorite.route'),
+);
 
 function App() {
   return (
