@@ -13,7 +13,9 @@ const useFetchDetails = () => {
   const { data, error, isError, loading } = spellDetails;
 
   useEffect(() => {
-    if (slug) dispatch(fetchSingleDetailSpell(slug));
+    if (slug) {
+      dispatch(fetchSingleDetailSpell(slug));
+    }
   }, [slug]);
 
   return { data, error, isError, loading };

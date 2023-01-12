@@ -1,18 +1,30 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { AxiosError } from 'axios';
 import { axiosInstance } from 'redux/axios';
-import { ISpell, SpillsList } from 'types';
+import { Error, ISpell, SpillsList } from 'types';
 
-export const fetchAllSpells = createAsyncThunk('spells/all-list', async () => {
-  const response = await axiosInstance('/spells');
-
-  return response.data;
-});
+export const fetchAllSpells = createAsyncThunk(
+  'spells/all-list',
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await axiosInstance('/spells');
+      return response.data;
+    } catch (error) {
+      const err = error as AxiosError;
+      if (!err.response) {
+        throw err;
+      }
+      // We got validation errors, let's return those so we can reference in our component and set form errors
+      return rejectWithValue(err.response.data);
+    }
+  },
+);
 
 export interface SpillInterface {
   loading: boolean;
   data: SpillsList;
   isError: boolean;
-  error: string | null;
+  error: Error | null;
 }
 
 const initialState: SpillInterface = {
@@ -41,7 +53,7 @@ export const spellSlice = createSlice({
       state.loading = false;
       state.data = { count: null, results: null };
       state.isError = true;
-      state.error = action?.error?.message as string;
+      state.error = action.payload as Error;
     });
   },
 });

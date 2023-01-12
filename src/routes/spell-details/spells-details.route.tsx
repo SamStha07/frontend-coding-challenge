@@ -1,5 +1,8 @@
+import ErrorMessage from 'components/error-.message';
 import ClockIcon from 'components/icons/clock';
 import Loader from 'components/loader.component';
+import { CLIENT_BASE_URL } from 'constant';
+import { Helmet } from 'react-helmet';
 import SpellDetailType from './components/spell-detail-type.component';
 import useFetchDetails from './useFetchDetails';
 
@@ -11,11 +14,16 @@ const SpellsDetailsRoute = () => {
   }
 
   if (isError) {
-    return <h3>{error}</h3>;
+    return <ErrorMessage error={error?.error} />;
   }
 
   return (
     <div>
+      <Helmet>
+        <title>{data?.name}</title>
+        <link rel='canonical' href={`${CLIENT_BASE_URL}/${data?.index}`} />
+      </Helmet>
+
       <div className='flex mt-10 justify-center'>
         <div className='py-8 px-6 items-center justify-center w-[680px] rounded-xl group sm:flex space-x-6 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl'>
           <div className='w-full'>

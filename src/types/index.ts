@@ -8,3 +8,7 @@ export interface SpillsList {
   count: number | null;
   results: ISpell[] | null;
 }
+
+export interface Error {
+  error: string;
+}

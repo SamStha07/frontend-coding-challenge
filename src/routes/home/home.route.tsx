@@ -1,3 +1,4 @@
+import ErrorMessage from 'components/error-.message';
 import Loader from 'components/loader.component';
 import { CLIENT_BASE_URL } from 'constant';
 import SpellTotalAndListLayout from 'layout/spell-total-and-list.layout';
@@ -12,12 +13,13 @@ const HomeRoute = () => {
   }
 
   if (isError) {
-    return <h3>{error}</h3>;
+    return <ErrorMessage error={error?.error} />;
   }
 
   return (
     <>
       <Helmet>
+        <title>Coding Challenge</title>
         <link rel='canonical' href={CLIENT_BASE_URL} />
       </Helmet>
 
